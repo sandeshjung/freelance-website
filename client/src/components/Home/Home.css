@@ -1,0 +1,74 @@
+.right-alligned {
+  justify-content: flex-end;
+  background-color: #fbf7ed;
+}
+.navbar-custom {
+  background-color: #fbf7ed;
+}
+
+.containter-fluid {
+  width: 0%;
+}
+
+.navbar-custom .navbar-brand {
+  color: #585d63;
+  font-family: "ChunkFive", sans-serif;
+
+  font-size: 26pt;
+}
+
+.navbar-custom .navbar-container {
+  color: #fbf7ed;
+}
+
+.navbar-custom .navbar-nav ml-auto mb-2 mb-lg-0 {
+  color: #fbf7ed;
+}
+
+.bright-bg-color {
+  background-color: #fbf7ed;
+}
+
+/* . signup-button {
+  background-color: #008060;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  font-size: 26;
+} */
+
+.login-button {
+  padding-right: 20px;
+}
+
+/* . nav-custom {
+  font-family: "Montserrat", sans-serif !important;
+}
+
+. navbar-brand-font {
+  font-family: "ChunkFive", sans-serif !important;
+} */
+
+.btn-outline {
+  color: #e9e4d8;
+  background-color: #fbf7ed;
+  border-color: #e9e4d8;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+}
+
+.btn-outline {
+  color: #e9e4d8;
+  background-color: #fbf7ed;
+  border-color: #e9e4d8;
+  font-weight: bold;
+  border-radius: 0;
+}
+
+.btn-outline:hover,
+.btn-outline:active,
+.btn-outline:focus,
+.btn-outline.active {
+  background: #e9e4d8;
+  color: #fbf7ed;
+  border-color: #e9e4d8;
+}

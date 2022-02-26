@@ -1,0 +1,62 @@
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 50%;
+}
+
+.homepage-text {
+  font-family: "Montserrat", sans-serif !important;
+  font-size: 50pt;
+  font-weight: bold;
+  text-align: center;
+  color: #585d63;
+  padding-left: 150px;
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+
+.first-section {
+  background-color: #fbf7ed;
+}
+
+.second-section {
+  background-color: #004c3f;
+}
+
+.question-title {
+  color: #fff;
+  padding-top: 100px;
+  text-align: center;
+}
+
+.card-text {
+  text-align: center;
+}
+
+.buttons-align {
+  text-align: center;
+}
+.card-text-2 {
+  text-align: center;
+  padding-left: 160px;
+  padding-right: 120px;
+}
+
+.column-2 {
+  flex: 50%;
+  text-align: center;
+  color: #fff;
+  padding-top: 50px;
+  padding-bottom: 100px;
+}
+
+hr.style1 {
+  display: flex;
+
+  margin: 30px auto;
+  color: #fff;
+  width: 80%;
+  align-items: center;
+}
