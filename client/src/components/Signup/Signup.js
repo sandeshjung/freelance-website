@@ -3,37 +3,44 @@ import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import styles from "./Styles.module.css";
 
+
 const Signup = () => {
-	const [data, setData] = useState({
+
+	const navigate = useNavigate()
+
+	const [user, setUser] = useState({
 		firstName: "",
 		lastName: "",
 		email: "",
 		password: "",
+		password2:""
 	});
-	const [error, setError] = useState("");
-	const navigate = useNavigate();
+	
 
-	const handleChange = ({ currentTarget: input }) => {
-		setData({ ...data, [input.name]: input.value });
-	};
+	const handleChange = e => {
+        const { name, value } = e.target
+        setUser({
+            ...user,
+            [name]: value
+        })
+    }
 
-	const handleSubmit = async (e) => {
+	const handleSubmit = (e) => {
 		e.preventDefault();
-		try {
-			const url = "http://localhost:8080/api/users";
-			const { data: res } = await axios.post(url, data);
-			navigate("/login");
-			console.log(res.message);
-		} catch (error) {
-			if (
-				error.response &&
-				error.response.status >= 400 &&
-				error.response.status <= 500
-			) {
-				setError(error.response.data.message);
-			}
-		}
-	};
+		const { firstName,lastName, email, password,password2 } = user
+        if( firstName && lastName && email && password && (password === password2)){
+            // fetch("http://localhost:5000/register", {method="POST", headers:{"Contain-Type":"application/json"} , body:JSON.stringify(user)}
+			
+			axios.post("http://localhost:5000/register", user)
+            .then( res => {
+                alert(res.data.message)
+                navigate.push("/Login")
+            })
+        } else {
+            alert("invalid input")
+        }
+        
+    }
 
 	return (
 		<div className={styles.signup_container}>
@@ -54,8 +61,7 @@ const Signup = () => {
 							placeholder="First Name"
 							name="firstName"
 							onChange={handleChange}
-							value={data.firstName}
-							required
+							value={user.firstName}
 							className={styles.input}
 						/>
 						<input
@@ -63,8 +69,7 @@ const Signup = () => {
 							placeholder="Last Name"
 							name="lastName"
 							onChange={handleChange}
-							value={data.lastName}
-							required
+							value={user.lastName}
 							className={styles.input}
 						/>
 						<input
@@ -72,8 +77,7 @@ const Signup = () => {
 							placeholder="Email"
 							name="email"
 							onChange={handleChange}
-							value={data.email}
-							required
+							value={user.email}
 							className={styles.input}
 						/>
 						<input
@@ -81,14 +85,24 @@ const Signup = () => {
 							placeholder="Password"
 							name="password"
 							onChange={handleChange}
-							value={data.password}
+							value={user.password}
+							className={styles.input}
+						/>
+						<input
+							type="password"
+							placeholder="Re-enter password"
+							name="password2"
+							onChange={handleChange}
+							value={user.password2}
 							required
 							className={styles.input}
 						/>
-						{error && <div className={styles.error_msg}>{error}</div>}
-						<button type="submit" className={styles.green_btn}>
+						
+						{/* <button type="submit" className={styles.green_btn} onClick={register}>
 							Sign Up
-						</button>
+						</button> */}
+
+						<input type="submit" value="Sign Up" className={styles.green_btn} />
 					</form>
 				</div>
 			</div>
