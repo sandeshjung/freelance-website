@@ -14,10 +14,11 @@ const Login = () => {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		try {
-			const url = "http://localhost:5000/login";
+			const url = "http://localhost:5000/api/auth/login";
 			const { data: res } = await axios.post(url, data);
-			localStorage.setItem("token", res.data);
-			window.location = "/";
+			// localStorage.setItem("token", res.data);
+			window.localStorage.setItem("token", JSON.stringify(res.data)); 
+			window.location = "/UserDashboard";
 		} catch (error) {
 			if (
 				error.response &&
@@ -30,8 +31,8 @@ const Login = () => {
 	};
 
 	return (
-		<div className={styles.login_container}>
-			<div className={styles.login_form_container}>
+		<div className={styles.category_container}>
+			<div className={styles.category_form_container}>
 				<div className={styles.left}>
 					<form className={styles.form_container} onSubmit={handleSubmit}>
 						<h1>Login to Your Account</h1>

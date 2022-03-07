@@ -1,31 +1,28 @@
-import express from 'express'
-import User from "../models/user.js";
+const router = require("express").Router();
+const { User, validate } = require("../models/user");
+const bcrypt = require("bcrypt");
 
+router.post("/register", async (req, res) => {
+	try {
+		const { error } = validate(req.body);
+		if (error)
+			return res.status(400).send({ message: error.details[0].message });
 
-const router= express.Router();
+		const user = await User.findOne({ email: req.body.email });
+		if (user)
+			return res
+				.status(409)
+				.send({ message: "User with given email already Exist!" });
 
-router.post("/register", (req, res) => {
-	const { firstName,lastName, email, password} = req.body
-    User.findOne({email: email}, (err, user) => {
-        if(user){
-            res.send({message: "Email already registerd"})
-        } else {
-            const user = new User({
-                firstName,
-				lastName,
-                email,
-                password
-            })
-            user.save(err => {
-                if(err) {
-                    res.send(err)
-                } else {
-                    res.send( { message: "Successfully Registered, Please login now." })
-                }
-            })
-        }
-    })
-    
-}) 
+		const salt = await bcrypt.genSalt(Number(process.env.SALT));
+		const hashPassword = await bcrypt.hash(req.body.password, salt);
 
-export default router;
+		await new User({ ...req.body, password: hashPassword }).save();
+		res.status(201).send({ message: "User created successfully" });
+	} catch (error) {
+		res.status(500).send({ message: "Internal Server Error" });
+	}
+});
+
+module.exports = router;
+

@@ -5,15 +5,14 @@ import styles from "./Styles.module.css";
 
 
 const Signup = () => {
-
+	const [error, setError] = useState("");
 	const navigate = useNavigate()
 
 	const [user, setUser] = useState({
 		firstName: "",
 		lastName: "",
 		email: "",
-		password: "",
-		password2:""
+		password: ""
 	});
 	
 
@@ -25,22 +24,40 @@ const Signup = () => {
         })
     }
 
-	const handleSubmit = (e) => {
+	const handleSubmit = async (e) => {
+
 		e.preventDefault();
-		const { firstName,lastName, email, password,password2 } = user
-        if( firstName && lastName && email && password && (password === password2)){
-            // fetch("http://localhost:5000/register", {method="POST", headers:{"Contain-Type":"application/json"} , body:JSON.stringify(user)}
+		try {
+			const url = "http://localhost:5000/api/users/register";
+			const { data: res } = await axios.post(url, user);
+			localStorage.setItem("token", JSON.stringify(user));
+			window.location("/Login");
+			console.log(res.message);
+		} catch (error) {
+			if (
+				error.response &&
+				error.response.status >= 400 &&
+				error.response.status <= 500
+			) {
+				setError(error.response.data.message);
+			}
+		}
+	};
+	
+	// 	const { firstName,lastName, email, password } = user
+    //     if( firstName && lastName && email && password){
+    //         // fetch("http://localhost:5000/register", {method="POST", headers:{"Contain-Type":"application/json"} , body:JSON.stringify(user)}
 			
-			axios.post("http://localhost:5000/register", user)
-            .then( res => {
-                alert(res.data.message)
-                navigate.push("/Login")
-            })
-        } else {
-            alert("invalid input")
-        }
+	// 		axios.post("http://localhost:5000/api/users/register", user)
+    //         .then( res => {
+    //             alert(res.data.message)
+    //             navigate.push("/Login")
+    //         })
+    //     } else {
+    //         alert("invalid input")
+    //     }
         
-    }
+    // }
 
 	return (
 		<div className={styles.signup_container}>
@@ -88,15 +105,7 @@ const Signup = () => {
 							value={user.password}
 							className={styles.input}
 						/>
-						<input
-							type="password"
-							placeholder="Re-enter password"
-							name="password2"
-							onChange={handleChange}
-							value={user.password2}
-							required
-							className={styles.input}
-						/>
+						
 						
 						{/* <button type="submit" className={styles.green_btn} onClick={register}>
 							Sign Up

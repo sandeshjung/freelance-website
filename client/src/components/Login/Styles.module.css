@@ -1,4 +1,4 @@
-.login_container {
+.category_container {
   width: 100%;
   min-height: 100vh;
   background-color: #fbf7ed;
@@ -7,7 +7,7 @@
   justify-content: center;
 }
 
-.login_form_container {
+.category_form_container {
   width: 900px;
   height: 500px;
   display: flex;

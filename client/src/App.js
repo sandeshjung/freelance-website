@@ -9,9 +9,7 @@ import Navbar from './components/Navbar/Navbar'
 // import Signin from './components/Signin/SigninForm'
 import Signup from './components/Signup/Signup';
 import Login from './components/Login/Login';
-
-
-
+import UserDashboard from './components/User/UserDashboard';
 
 
 function App() {
@@ -25,7 +23,10 @@ function App() {
           <Route path="/Home" exact element={<Home />} />
           <Route path="/Signup" exact element={<Signup />} />
           <Route path="/Login" exact element={<Login />} />
+          <Route path="/UserDashboard" exact element={<UserDashboard />} />
+        
           <Route path="/" element={<Navigate replace to="/Home" />} />
+     
         
       </Routes>
       </>
