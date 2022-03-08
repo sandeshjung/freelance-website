@@ -10,7 +10,9 @@ import Navbar from './components/Navbar/Navbar'
 import Signup from './components/Signup/Signup';
 import Login from './components/Login/Login';
 import UserDashboard from './components/User/UserDashboard';
-
+import About from './components/About/About'
+import Contact from './components/Contact/Contact'
+import BecomeHirer from './components/BecomeHirer/BecomeHirer'
 
 function App() {
   // const user= localStorage.getItem("token")
@@ -23,9 +25,13 @@ function App() {
           <Route path="/Home" exact element={<Home />} />
           <Route path="/Signup" exact element={<Signup />} />
           <Route path="/Login" exact element={<Login />} />
-          <Route path="/UserDashboard" exact element={<UserDashboard />} />
         
+          <Route path="/About" exact element={<About />} />
+          <Route path="/UserDashboard" exact element={<UserDashboard />} />
+          <Route path="/Contact" exact element={<Contact />} />
+          <Route path="/BecomeHirer" exact element={<BecomeHirer />} />
           <Route path="/" element={<Navigate replace to="/Home" />} />
+
      
         
       </Routes>

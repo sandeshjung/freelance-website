@@ -1,51 +1,64 @@
-// import React from "react";
-// import FacebookIcon from '@mui/icons-material/Facebook';
-// import InstagramIcon from '@mui/icons-material/Instagram';
-// import TwitterIcon from '@mui/icons-material/Twitter';
+import React from 'react'
+import './Footer.css'
+import FacebookIcon from '@mui/icons-material/Facebook'
+import InstagramIcon from '@mui/icons-material/Instagram'
+import TwitterIcon from '@mui/icons-material/Twitter'
+import { IconButton } from '@mui/material'
 
-
-
-
-
-
-// const Footer = () => {
-//     return (
-//         <>
-        
-//     <footer className=" text-center text-white" style="background-color:#004c3f;">
-
-//      <div className="container p-4">
-
-    
-//         <section className="mb-4">
-     
-//       <svg data-testid="FacebookIcon"></svg></a>
-
-   
-//       <svg data-testid="TwitterIcon"></svg></a>
-
-     
-     
-//       <svg data-testid="InstagramIcon"></svg></a>
-
-//        </section>
-  
-
-
-
-//   </div>
  
+export default function Footer() {
+ 
+  return (
+        <footer className='footerHead'>
+            
+            <p className=" info"> <span className='email'>Support emails: </span><span className='click'> support.merolancer@gmail.com </span> </p>
+            <p className="info"><span className='phone'>telephone: </span><span className='click'> 123456789</span> , <span className='click'>9876543210 </span></p>
+            <div className="footer-social-container">
+                <div style={{margin: 'auto 0px'}}>
+                    <a href="#" className="social-link">Terms & Services</a>
+                    <a href="#" className="social-link">Privacy page</a>       
+                </div>
+                <div>
+                    <IconButton
+                        href='https://www.facebook.com'
+                        target = '_blank'
+                        title = 'facebook'
+                        className = "socialIcon"
+                    >
+                        <FacebookIcon 
+                            sx={{fontSize : '45px'}}
+                        />
+                    </IconButton>
+ 
+                    <IconButton
+                        href="https://www.instagram.com"
+                        target = '_blank'
+                        title = 'Instagram'
+                        className = "socialIcon"
 
+                    >
+                        <InstagramIcon 
+                            sx={{fontSize : '45px'}}
+                        />
+                    </IconButton>
+ 
+                    <IconButton
+                        href="https://www.twitter.com"
+                        target = '_blank'
+                        title = 'Twitter'
+                        className = "socialIcon"
 
-//   <div className="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-//     © 2020 Copyright:Merolancer
-//   </div>
-
-
-// </footer>
-// </>
-
-//     );
-// };
-
-// export default Footer;
+                    >
+                        <TwitterIcon 
+                            sx={{fontSize : '45px'}}
+                        />
+                    </IconButton>
+ 
+ 
+                </div>
+            </div>
+            <p className="footer-credit">Merolancer, the complete freelancing website</p>
+        </footer>  
+ 
+    )
+}

@@ -11,13 +11,22 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import FormGroup from '@mui/material/FormGroup';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
+import jwt_decode from 'jwt-decode'
+import "./Navbar.css"
+import { useNavigate } from 'react-router-dom';
+
+
 
 export default function Navbar() {
   const [auth, setAuth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState(null);
-
+  const navigate = useNavigate();
   const handleChange = (event) => {
     setAuth(event.target.checked);
+    
+      localStorage.removeItem("token");
+      window.location = "/Login";
+    
   };
 
   const handleMenu = (event) => {
@@ -28,9 +37,24 @@ export default function Navbar() {
     setAnchorEl(null);
   };
 
+  const handleHirer = () => {
+    navigate('/BecomeHirer')
+  };
+
+  var user= JSON.parse(localStorage.getItem("token"))
+	console.log(localStorage)
+	console.log(user)
+
+	
+		var decode = user;
+		var decoded = jwt_decode(decode);
+
+
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <FormGroup>
+    <div style={{backgroundColor:"#004c3f"}}>
+    
+
+      {/* <FormGroup>
         <FormControlLabel
           control={
             <Switch
@@ -41,19 +65,19 @@ export default function Navbar() {
           }
           label={auth ? 'Logout' : 'Login'}
         />
-      </FormGroup>
-      <AppBar position="static">
+      </FormGroup> */}
+      <AppBar position="static" color="transparent">
         <Toolbar>
           <IconButton
             size="large"
             edge="start"
             color="inherit"
             aria-label="menu"
-            sx={{ mr: 2 }}
+            sx={{ mr: 2, color:"white" }}
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1, color:"white" }}>
             Merolancer
           </Typography>
           {auth && (
@@ -65,12 +89,14 @@ export default function Navbar() {
                 aria-haspopup="true"
                 onClick={handleMenu}
                 color="inherit"
+                sx={{ size:'large', color:"white" }}
               >
                 <AccountCircle />
               </IconButton>
               <Menu
                 id="menu-appbar"
                 anchorEl={anchorEl}
+                
                 anchorOrigin={{
                   vertical: 'top',
                   horizontal: 'right',
@@ -83,13 +109,14 @@ export default function Navbar() {
                 open={Boolean(anchorEl)}
                 onClose={handleClose}
               >
-                <MenuItem onClick={handleClose}>Profile</MenuItem>
-                <MenuItem onClick={handleClose}>My account</MenuItem>
+                <MenuItem onClick={handleClose}>{decoded.firstName}</MenuItem>
+                <MenuItem onClick={handleHirer}>Become hirer</MenuItem>
+                <MenuItem onClick={handleChange}>Logout</MenuItem>
               </Menu>
             </div>
           )}
         </Toolbar>
       </AppBar>
-    </Box>
+    </div>
   );
 }

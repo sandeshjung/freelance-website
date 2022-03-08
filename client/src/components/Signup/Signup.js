@@ -2,6 +2,8 @@ import { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import styles from "./Styles.module.css";
+import Navbar from "../Home/HomepageNav"
+
 
 
 const Signup = () => {
@@ -31,7 +33,7 @@ const Signup = () => {
 			const url = "http://localhost:5000/api/users/register";
 			const { data: res } = await axios.post(url, user);
 			localStorage.setItem("token", JSON.stringify(user));
-			window.location("/Login");
+			navigate("/Login");
 			console.log(res.message);
 		} catch (error) {
 			if (
@@ -60,6 +62,8 @@ const Signup = () => {
     // }
 
 	return (
+		<>
+		<Navbar/>
 		<div className={styles.signup_container}>
 			<div className={styles.signup_form_container}>
 				<div className={styles.left}>
@@ -116,6 +120,7 @@ const Signup = () => {
 				</div>
 			</div>
 		</div>
+		</>
 	);
 };
 

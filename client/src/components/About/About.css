@@ -1,0 +1,7 @@
+.about {
+  min-height: 100vh;
+  width: 100vw;
+  padding: 100px 50px 50px 50px;
+  background: #004c3f;
+  color: rgba(255, 255, 255, 0.8);
+}

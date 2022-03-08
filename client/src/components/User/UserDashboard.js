@@ -1,15 +1,15 @@
 import React, {useEffect} from 'react'
-import getCurrentUser from './getCurrentUser'
+
 import axios from 'axios';
 import jwt_decode from "jwt-decode";
+import Navbar from "../Navbar/Navbar"
+import './UserDashboard.css'
 
+import Card from "./Card"
 
 const UserDashboard = () => {
     
-    const handleLogout = () => {
-		localStorage.removeItem("token");
-		window.location = "/Login";
-	};
+   
 
 	
 
@@ -30,12 +30,19 @@ const UserDashboard = () => {
 
 	return (
 		<>
+		<Navbar />
+		<div className="container">
+			<h1 className="titleFirst">Hi {decoded.firstName}, Welcome back. </h1>
+			<hr />
 
-			hi {decoded.firstName}
+		<h4>Recommended jobs for you</h4>
+		<br />
+
+		<Card/>
+		
 			  
-				<button onClick={handleLogout}>
-					Logout
-				</button>
+				
+				</div>
                 </>
 	);
 };

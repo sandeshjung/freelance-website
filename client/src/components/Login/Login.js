@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import styles from "./Styles.module.css";
+import Navbar from "../Home/HomepageNav"
 
 const Login = () => {
 	const [data, setData] = useState({ email: "", password: "" });
@@ -31,6 +32,8 @@ const Login = () => {
 	};
 
 	return (
+		<>
+		<Navbar/>
 		<div className={styles.category_container}>
 			<div className={styles.category_form_container}>
 				<div className={styles.left}>
@@ -70,6 +73,7 @@ const Login = () => {
 				</div>
 			</div>
 		</div>
+		</>
 	);
 };
 

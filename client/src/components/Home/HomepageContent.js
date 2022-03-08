@@ -1,12 +1,14 @@
 import React from 'react'
 import './HomepageContent.css'
 import Button from '@mui/material/Button';
+import HomepageSearch from './HomepageSearch';
 
 
 
 export default function HomepageContent() {
   return (
       <>
+       <HomepageSearch />
       <div className='first-section'>
             <div className='row'>
                 
