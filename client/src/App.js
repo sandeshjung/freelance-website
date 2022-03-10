@@ -13,6 +13,8 @@ import UserDashboard from './components/User/UserDashboard';
 import About from './components/About/About'
 import Contact from './components/Contact/Contact'
 import BecomeHirer from './components/BecomeHirer/BecomeHirer'
+import Freelancer from './components/Freelancer/Freelancer';
+import Profile from './components/Profile/Profile';
 
 function App() {
   // const user= localStorage.getItem("token")
@@ -30,6 +32,8 @@ function App() {
           <Route path="/UserDashboard" exact element={<UserDashboard />} />
           <Route path="/Contact" exact element={<Contact />} />
           <Route path="/BecomeHirer" exact element={<BecomeHirer />} />
+          <Route path="/Freelancer" exact element={<Freelancer />} />
+          <Route path="/Profile" exact element={<Profile />} />
           <Route path="/" element={<Navigate replace to="/Home" />} />
 
      

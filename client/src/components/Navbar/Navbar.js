@@ -13,7 +13,7 @@ import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import jwt_decode from 'jwt-decode'
 import "./Navbar.css"
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,Link } from 'react-router-dom';
 
 
 
@@ -41,9 +41,17 @@ export default function Navbar() {
     navigate('/BecomeHirer')
   };
 
+  const handleProfile = () => {
+    navigate('/Profile')
+  }
+
+  const sendHome = () => {
+    navigate('/UserDashboard')
+  }
+
   var user= JSON.parse(localStorage.getItem("token"))
-	console.log(localStorage)
-	console.log(user)
+	// console.log(localStorage)
+	// console.log(user)
 
 	
 		var decode = user;
@@ -77,7 +85,7 @@ export default function Navbar() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1, color:"white" }}>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1, color:"white", cursor: 'pointer' }} onClick={sendHome}>
             Merolancer
           </Typography>
           {auth && (
@@ -109,7 +117,8 @@ export default function Navbar() {
                 open={Boolean(anchorEl)}
                 onClose={handleClose}
               >
-                <MenuItem onClick={handleClose}>{decoded.firstName}</MenuItem>
+                
+                <MenuItem onClick={handleProfile}>{decoded.firstName}</MenuItem>
                 <MenuItem onClick={handleHirer}>Become hirer</MenuItem>
                 <MenuItem onClick={handleChange}>Logout</MenuItem>
               </Menu>

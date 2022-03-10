@@ -6,7 +6,9 @@ const mongoose = require('mongoose');
 
 const userRoutes = require("./routes/users");
 const authRoutes = require("./routes/auth");
-const becomeHirer= require("./routes/BecomeHirer")
+const becomeHirer= require("./routes/becomeHirer")
+const freelancer = require("./routes/freelancer");
+const postJob = require('./routes/job');
 
 // database connection
 mongoose.connect("mongodb://localhost:27017/merolancer", {
@@ -23,7 +25,9 @@ app.use(cors());
 // routes
 app.use("/api/users", userRoutes);
 app.use("/api/auth", authRoutes);
-app.put("/api/update", becomeHirer)
+app.use("/api/update", becomeHirer);
+app.use("/api/category", freelancer);
+app.use("/api/post", postJob);
 
 const port = process.env.PORT || 5000;
 app.listen(port, console.log(`Listening on port ${port}...`));

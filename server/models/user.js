@@ -9,14 +9,14 @@ const userSchema = new mongoose.Schema({
 	email: { type: String, required: true },
 	password: { type: String, required: true },
   role: {
-          type: [String],
-          enum: ["Freelancer", "Hirer"],
-          default: ["Freelancer"],
-        }
+          type: String, default:'Freelancer'
+        },
+		ratings: {type: Number, default:0},
+		category: {type:String, default:''}
 });
 
 userSchema.methods.generateAuthToken = function () {
-	const token = jwt.sign({ _id: this._id, firstName: this.firstName, email: this.email}, process.env.JWTPRIVATEKEY, {
+	const token = jwt.sign({ _id: this._id, firstName: this.firstName, lastName: this.lastName, ratings: this.ratings, email: this.email, role:this.role, category:this.category}, process.env.JWTPRIVATEKEY, {
 		expiresIn: "30d",
 	});
 	return token;

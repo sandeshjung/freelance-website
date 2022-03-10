@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, Component} from 'react'
 
 import axios from 'axios';
 import jwt_decode from "jwt-decode";
@@ -6,6 +6,8 @@ import Navbar from "../Navbar/Navbar"
 import './UserDashboard.css'
 
 import Card from "./Card"
+import { renderMatches } from 'react-router-dom';
+import Content from './Content';
 
 const UserDashboard = () => {
     
@@ -27,18 +29,22 @@ const UserDashboard = () => {
 
 	// console.log(user)
 	// console(user.firstName)
-
+	
 	return (
 		<>
 		<Navbar />
 		<div className="container">
 			<h1 className="titleFirst">Hi {decoded.firstName}, Welcome back. </h1>
+			
 			<hr />
 
-		<h4>Recommended jobs for you</h4>
+		{/* <h4>Recommended jobs for you</h4>
 		<br />
 
-		<Card/>
+		<Card/> */}
+
+
+		<Content />
 		
 			  
 				
