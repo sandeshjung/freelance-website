@@ -36,8 +36,9 @@ const BecomeHirer = () => {
 				.then(
 					(response) => console.log(response)
 				)
-				
-		navigate("/UserDashboard")
+		
+		localStorage.removeItem("token")				
+		navigate("/Login")
 			
 			// localStorage.setItem("token", res.data);
 			// window.localStorage.setItem("token", JSON.stringify(res.data)); 

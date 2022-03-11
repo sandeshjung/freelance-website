@@ -8,6 +8,7 @@ import './UserDashboard.css'
 import Card from "./Card"
 import { renderMatches } from 'react-router-dom';
 import Content from './Content';
+import ListJobs from './ListJobs';
 
 const UserDashboard = () => {
     
@@ -45,7 +46,7 @@ const UserDashboard = () => {
 
 
 		<Content />
-		
+		<ListJobs />
 			  
 				
 				</div>

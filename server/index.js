@@ -10,6 +10,7 @@ const becomeHirer= require("./routes/becomeHirer")
 const freelancer = require("./routes/freelancer");
 const postJob = require('./routes/job');
 
+
 // database connection
 mongoose.connect("mongodb://localhost:27017/merolancer", {
     useNewUrlParser: true,
