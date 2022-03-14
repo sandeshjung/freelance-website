@@ -15,6 +15,23 @@ router.get('/', (req, res) => {
         });
 });
 
+
+router.get('/:id', (req, res) => {
+
+
+
+    User.findById(req.params.id)
+    // User.find({pid: req.params.id})
+        .exec(function(err,user){
+            if(err) {
+                console.log("Error finding user");
+            }
+            else{
+                res.json(user)
+            }
+        })
+});
+
 router.post("/register", async (req, res) => {
 	try {
 		const { error } = validate(req.body);

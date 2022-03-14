@@ -5,10 +5,9 @@ import jwt_decode from "jwt-decode";
 import Navbar from "../Navbar/Navbar"
 import './UserDashboard.css'
 
-import Card from "./Card"
+import ActionAreaCard from './ActionAreaCard'
 import { renderMatches } from 'react-router-dom';
 import Content from './Content';
-import ListJobs from './ListJobs';
 
 const UserDashboard = () => {
     
@@ -35,7 +34,7 @@ const UserDashboard = () => {
 		<>
 		<Navbar />
 		<div className="container">
-			<h1 className="titleFirst">Hi {decoded.firstName}, Welcome back. </h1>
+			<h1 className="titleFirst">Hi {decoded.firstName}, Welcome. </h1>
 			
 			<hr />
 
@@ -46,7 +45,7 @@ const UserDashboard = () => {
 
 
 		<Content />
-		<ListJobs />
+		
 			  
 				
 				</div>

@@ -9,6 +9,8 @@ const authRoutes = require("./routes/auth");
 const becomeHirer= require("./routes/becomeHirer")
 const freelancer = require("./routes/freelancer");
 const postJob = require('./routes/job');
+const ratings = require('./routes/rating');
+const requests = require('./routes/requests')
 
 
 // database connection
@@ -29,6 +31,8 @@ app.use("/api/auth", authRoutes);
 app.use("/api/update", becomeHirer);
 app.use("/api/category", freelancer);
 app.use("/api/post", postJob);
+app.use("/api/rating", ratings);
+app.use("/api/request", requests);
 
 const port = process.env.PORT || 5000;
 app.listen(port, console.log(`Listening on port ${port}...`));

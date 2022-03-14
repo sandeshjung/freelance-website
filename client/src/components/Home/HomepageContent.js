@@ -16,7 +16,7 @@ export default function HomepageContent() {
                         <div className='homepage-text'>
                 
                 
-                            <p class="card-text">Find the perfect freelancers for your business. </p>
+                            <p className="card-text">Find the perfect freelancers for your business. </p>
 
                         </div>
                         <div className='buttons-align'>
@@ -34,7 +34,7 @@ export default function HomepageContent() {
                 <div className='column'>
                     <img
                         src="./images/homepage-image.jpg"  
-                        class="img-fluid hover-shadow"
+                        className="img-fluid hover-shadow"
                         alt="Homepage Image"
                         />
                 </div>
@@ -71,9 +71,9 @@ export default function HomepageContent() {
            
                
                 
-                <div class="column-2">
-                    <h5 class="card-title-2">Choose freelancers</h5>
-                    <p class="card-text-2">
+                <div className="column-2">
+                    <h5 className="card-title-2">Choose freelancers</h5>
+                    <p className="card-text-2">
                     We've got freelancers for jobs of any size or budget. Choose the best one for you.
                     </p>
                 </div>

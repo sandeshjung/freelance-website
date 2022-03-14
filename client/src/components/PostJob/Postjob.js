@@ -22,7 +22,8 @@ const PostJob = () => {
 		price: '',
 		category: "",
         details: "",
-        pid:decoded._id
+        pid:decoded._id,
+        hirerName:decoded.firstName
 	});
    
                 

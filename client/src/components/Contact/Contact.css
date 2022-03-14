@@ -1,27 +1,20 @@
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+/* *, *:before, *:after {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 
-/* body {
-  background: linear-gradient(to right, #004c3f 0%, #004c3f 100%);
-  font-size: 12px;
-} */
+  
+  body, button, input {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+  } */
 
-/* body,
-button,
-input {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 700;
-  letter-spacing: 1.4px;
-} */
-
-.background {
+.background_whole {
   display: flex;
   min-height: 100vh;
+  background-color: #004c3f;
 }
 
 .container {
@@ -115,7 +108,7 @@ input {
 }
 
 .app-form-control::placeholder {
-  color: #666;
+  color: #fff;
 }
 
 .app-form-control:focus {

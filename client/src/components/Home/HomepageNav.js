@@ -27,9 +27,9 @@ export default function HomepageNav() {
             <div className='d-flex justify-content-end'>
               <div className='login-button'>
               <li className="nav-item">
-              <Link to="../Login">
-              <p><a href="#" class="btn btn-outline">Login</a></p>
-              </Link>
+              {/* <Link to="../Login"> */}
+              <a href='../Login' className="btn btn-outline">Login</a>
+              {/* </Link> */}
                   
                 
               </li>

@@ -7,7 +7,8 @@ const jobSchema = new mongoose.Schema({
 		price: {type: Number, required: true},
 		category: {type:String, required: true},
         details: {type:String, required: true},
-        pid: {type:String, required: true}
+        pid: {type:String, required: true},
+		hirerName: {type:String, required:true}
 });
 
 // jobSchema.methods.generateJobToken = function () {

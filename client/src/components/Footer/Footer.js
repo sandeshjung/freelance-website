@@ -15,8 +15,8 @@ export default function Footer() {
             <p className="info"><span className='phone'>telephone: </span><span className='click'> 123456789</span> , <span className='click'>9876543210 </span></p>
             <div className="footer-social-container">
                 <div style={{margin: 'auto 0px'}}>
-                    <a href="#" className="social-link">Terms & Services</a>
-                    <a href="#" className="social-link">Privacy page</a>       
+                    <a href="/About" className="social-link">About us</a>
+                    <a href="/Contact" className="social-link">Contact us</a>       
                 </div>
                 <div>
                     <IconButton
@@ -54,7 +54,7 @@ export default function Footer() {
                         />
                     </IconButton>
  
- 
+    
                 </div>
             </div>
             <p className="footer-credit">Merolancer, the complete freelancing website</p>

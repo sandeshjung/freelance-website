@@ -1,8 +1,11 @@
 import React, { Component, useState } from 'react'
 import jwt_decode from 'jwt-decode'
-import card from './Card'
+// import card from './Card' 
 import { Link } from 'react-router-dom'
 import axios from 'axios'
+import ListJobs from './ListJobs'
+import ShowJobs from './ShowJobs'
+import Button from '@mui/material/Button'
 
 
 
@@ -38,9 +41,12 @@ const Content = () => {
             <div>
                 <h3 className="titleFirst">Hire Freelancers</h3>
                 <div style={{display:'flex', justifyContent:'center', alignItems:'center'}}>
-                <Link to="/PostJob">
-                <button className='btn btn-outline-success' >Post job</button>
-                </Link> 
+                {/* <Link to="/PostJob">
+                <button className='btn btn-outline-success' >Post job</button> */}
+                <Button variant="contained" color="success" href="/PostJob">
+  Post Job
+</Button>
+                {/* </Link>  */}
                </div>
               
                {/* {(() => {
@@ -67,8 +73,9 @@ const Content = () => {
         </Card>
                 }
             })
-            } */}
+            } */}<ListJobs />
                 </div>
+                
           )
         } else  {
           return (
@@ -79,7 +86,8 @@ const Content = () => {
                 </Link>
             </div>
                 <br/>
-                <card />
+                {/* <card />  */}
+                <ShowJobs/>
                 </>
           )
         }

@@ -1,16 +1,14 @@
 import React from "react";
+import Footer from "../Footer/Footer";
 import "./Contact.css";
-import Navbar from "../Home/HomepageNav"
-
-
-
+import Navbar from '../Navbar/Navbar'
 
 function Contact() {
   return (
     <>
-    <Navbar />
-    
-<div className="background">
+   
+<div className="background_whole">
+  
   <div className="container">
     {/* <div className="screen"> */}
       
@@ -25,7 +23,7 @@ function Contact() {
           <div className="app-contact">
               CONTACT No : +977 986-131-3477
               <hr />
-                EMAIL: riwazn@gmail.com
+                EMAIL: contact@merolancer.com
             </div>
         </div>
         <div className="screen-body-item">
@@ -43,7 +41,7 @@ function Contact() {
               <input className="app-form-control" placeholder="MESSAGE" required="true"/>
             </div>
             <div className="app-form-group buttons">
-              
+              <button className="app-form-button">CANCEL</button>
               <button className="app-form-button">SEND</button>
             </div>
           </div>
@@ -52,6 +50,7 @@ function Contact() {
     
   </div>
 </div>
+  <Footer/>
 </>
 );
 }
