@@ -17,6 +17,7 @@ import Freelancer from './components/Freelancer/Freelancer';
 import Profile from './components/Profile/Profile';
 import PostJob from './components/PostJob/Postjob'
 import JobProfile from './components/Rate/Rate'
+import RequestList from './components/Requests/RequestList';
 
 function App() {
   // const user= localStorage.getItem("token")
@@ -38,6 +39,7 @@ function App() {
           <Route path="/Profile" exact element={<Profile />} />
           <Route path="/PostJob" exact element={<PostJob />} />
           <Route path="/JobProfile" exact element={<JobProfile />} />
+          <Route path="/RequestList" exact element={<RequestList />} />
           <Route path="/" element={<Navigate replace to="/Home" />} />
 
      

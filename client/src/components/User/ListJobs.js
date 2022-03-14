@@ -34,7 +34,7 @@ function ListJobs() {
         })
        
     }
-    React.useEffect(()=>{console.log({jobs})},[jobs]) 
+    React.useEffect(()=>{},[jobs]) 
  
   
 
