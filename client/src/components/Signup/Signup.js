@@ -33,6 +33,7 @@ const Signup = () => {
 			const url = "http://localhost:5000/api/users/register";
 			const { data: res } = await axios.post(url, user);
 			localStorage.setItem("token", JSON.stringify(user));
+			alert('Success')
 			navigate("/Login");
 			console.log(res.message);
 		} catch (error) {

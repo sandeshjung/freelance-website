@@ -30,6 +30,7 @@
     "react-scripts": "5.0.0",
     "react-toastify": "^8.2.0",
     "reactstrap": "^9.0.1",
+    "recommender": "^3.0.0",
     "sendemail": "^4.0.3",
     "styled-components": "^5.3.3",
     "twin.macro": "^2.8.2",

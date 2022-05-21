@@ -1,5 +1,9 @@
 const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
+const {Schema} = require('mongoose')
+
+
+
 
 
 const jobSchema = new mongoose.Schema({
@@ -8,7 +12,7 @@ const jobSchema = new mongoose.Schema({
 		category: {type:String, required: true},
         details: {type:String, required: true},
         pid: {type:String, required: true},
-		hirerName: {type:String, required:true}
+		hirerName: {type:String, required:true},
 });
 
 // jobSchema.methods.generateJobToken = function () {

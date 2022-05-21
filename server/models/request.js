@@ -1,10 +1,14 @@
 const mongoose = require("mongoose");
+const {Schema} = require("mongoose")
 
 
 
 const requestSchema = new mongoose.Schema({
-		jobId: {type: String, required: true},
-		fId: {type:String, required: true}
+		
+		jobId: {type: String, ref: "job"},
+		fId: {type: Schema.Types.ObjectId, ref:"user"},
+		accepted: {type:Boolean, default: false},
+		
 });
 
 // jobSchema.methods.generateJobToken = function () {
@@ -14,7 +18,8 @@ const requestSchema = new mongoose.Schema({
 // 	return jobToken;
 // };
 
-module.exports = mongoose.model("request", requestSchema);
+const request=mongoose.model("request", requestSchema);
+module.exports = request;
 
 
 

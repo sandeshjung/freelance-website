@@ -20,10 +20,10 @@ export default function HomepageContent() {
 
                         </div>
                         <div className='buttons-align'>
-                        <Button variant="outlined" color="success">Earn money freelancing</Button>
+                        <Button variant="outlined" color="success" href='/signup'>Earn money freelancing</Button>
                         <br/>
                         <br/>
-                        <Button variant="contained" color="success">
+                        <Button variant="contained" color="success" href='/signup'> 
                             Hire freelancer
                             </Button>
                     </div>

@@ -1,3 +1,44 @@
+// import React from 'react'
+// import Rating from '@mui/material/Rating';
+// import jwt_decode from 'jwt-decode'
+// import axios from 'axios';
+
+// const SendRatings = ({value1}) => {
+//     const [value, setValue] = React.useState(0);
+//     var user= localStorage.getItem("token")
+// 	var decode = user;
+// 	var decoded = jwt_decode(decode);
+//     const handleRatings = 
+//         (event, newValue) => {
+//             setValue(newValue);
+//             console.log(value)
+//             const toSend={
+//                 		ratings:value,
+//                         jobId:value1,
+//                         fId: decoded._id
+//                 	}
+//                     console.log(toSend)
+//                     axios.post(`http://localhost:5000/api/rating/ratings`, toSend)
+                    
+//                     console.log('success')
+                  
+//                 }
+          
+          
+
+//   return (
+//     <Rating
+//     name="simple-controlled"
+//     value={value}
+//     onChange={handleRatings}
+//   />
+//   )
+// }
+
+// export default SendRatings
+
+
+
 import React from 'react'
 import Rating from '@mui/material/Rating';
 import jwt_decode from 'jwt-decode'
@@ -57,9 +98,7 @@ const SendRatings = ({value1}) => {
         name="hover-feedback"
         value={value}
         precision={0.5}
-        onChange={(event, newValue) => {
-          setValue(newValue);
-        }}
+        onChange={handleRatings}
         onChangeActive={(event, newHover) => {
           setHover(newHover);
         }}

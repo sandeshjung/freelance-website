@@ -7,6 +7,7 @@ import jwt_decode from 'jwt-decode'
 
 
 
+
 const PostJob = () => {
 	const [error, setError] = useState("");
 	const navigate = useNavigate()
@@ -23,7 +24,8 @@ const PostJob = () => {
 		category: "",
         details: "",
         pid:decoded._id,
-        hirerName:decoded.firstName
+        hirerName:decoded.firstName,
+        requests: ''
 	});
    
                 
@@ -47,7 +49,7 @@ const PostJob = () => {
 
             
 			await axios.post(url, job);  
-			
+			alert('Successfully posted')
 			navigate("/UserDashboard");
 			console.log("success");
 		} catch (error) {

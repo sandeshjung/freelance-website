@@ -8,12 +8,15 @@ const RequestJob = ({value2}) => {
   // console.log(value2) 
     const handleClick = () => {
          const toSend={
+              
             jobId:value2,
             fId: decoded._id
         }
-        // console.log(toSend)
+        console.log(toSend)
         axios.post(`http://localhost:5000/api/request/requests`, toSend)
+        alert('Requested Successfully')
     }
+
   return (
     <div sx={{display:'flex', justify:'center', align:'center'}}>
          <button onClick={handleClick} className="btn btn-outline-success">Request Job</button>

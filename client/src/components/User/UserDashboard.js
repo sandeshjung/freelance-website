@@ -8,6 +8,7 @@ import './UserDashboard.css'
 import ActionAreaCard from './ActionAreaCard'
 import { renderMatches } from 'react-router-dom';
 import Content from './Content';
+import Search from '../Search/Search'
 
 const UserDashboard = () => {
     
@@ -33,6 +34,7 @@ const UserDashboard = () => {
 	return (
 		<>
 		<Navbar />
+		{/* <Search />  */}
 		<div className="container">
 			<h1 className="titleFirst">Hi {decoded.firstName}, Welcome. </h1>
 			

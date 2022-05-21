@@ -4,9 +4,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
-import { Container, Row, Col } from 'react-grid-system';
 
-import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import ShowRequests from './ShowRequests';
 

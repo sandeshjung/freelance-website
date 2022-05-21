@@ -1,11 +1,12 @@
 const mongoose = require("mongoose");
+const {Schema} = require("mongoose")
 
 
 
 const ratingSchema = new mongoose.Schema({
-	ratings: { type: Number },
-		jobId: {type: String, required: true},
-		fId: {type:String, required: true}
+	ratings: { type: Number, default:0 },
+		jobId: {type: Schema.Types.ObjectId, ref:"job"},
+		fId: {type: Schema.Types.ObjectId, ref:"user"}
 });
 
 // jobSchema.methods.generateJobToken = function () {

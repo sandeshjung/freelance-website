@@ -6,6 +6,7 @@ import axios from 'axios'
 import ListJobs from './ListJobs'
 import ShowJobs from './ShowJobs'
 import Button from '@mui/material/Button'
+import Recommend from '../Recommend/Recommend'
 
 
 
@@ -88,6 +89,7 @@ const Content = () => {
                 <br/>
                 {/* <card />  */}
                 <ShowJobs/>
+                <Recommend/>
                 </>
           )
         }

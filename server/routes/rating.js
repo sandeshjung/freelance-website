@@ -44,6 +44,29 @@ router.post("/ratings", async (req, res) => {
 	}
 });
 
+// router.post("/rate", async (req, res) => {
+//       try {
+//             const rate = await Rating.find({"req.body.jobId": "jobId", "req.body.fId":"fId"}); 
+//        console.log(_id) 
+//         rate.findByIdAndUpdate(
+//           { _id : rate._id },
+//           { ratings:  req.body.ratings},
+//           function(err, result) {
+//             if (err) {
+//               res.send(err);
+//             } else {
+//               res.send(result);
+//             }
+//           }
+//         );
+       
+//       } catch (err) {
+//         console.log("Error adding category", err);
+//       }
+//     })
+    
+    
+
 
 
 

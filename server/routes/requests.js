@@ -4,15 +4,12 @@ const Request = require("../models/request");
 
 
 router.get('/', (req, res) => {
-
-    Request.find({  })
-        .then((Request) => {
-            console.log('Data: ', Request);
-            res.json(Request);
-        })
-        .catch((error) => {
-            console.log('error: ', daerrorta);
-        });
+    Request.find().populate('fId').
+    exec(function (err, data) {
+        console.log('Data: ', data);
+            res.json(data);
+    });
+        
 });
 
 

@@ -11,6 +11,8 @@ const freelancer = require("./routes/freelancer");
 const postJob = require('./routes/job');
 const ratings = require('./routes/rating');
 const requests = require('./routes/requests')
+// const recommend = require('./Recommendation/Recommendation') 
+// const recommendation = require('./Recommendation/Recommendation') 
 
 
 // database connection
@@ -33,6 +35,8 @@ app.use("/api/category", freelancer);
 app.use("/api/post", postJob);
 app.use("/api/rating", ratings);
 app.use("/api/request", requests);
+// app.use("/api/recommend",recommend); 
+
 
 const port = process.env.PORT || 5000;
 app.listen(port, console.log(`Listening on port ${port}...`));

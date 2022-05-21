@@ -27,8 +27,8 @@ function ShowJobs() {
     const userCategory= decoded.category;
     // console.log(userCategory)
 
-    const handleClick = async () => 
-    // useEffect(async()=>{
+    // const handleClick = async () => 
+    useEffect(async()=>
     {
        await axios.get(`http://localhost:5000/api/post/`)
         .then(resp => {
@@ -53,7 +53,7 @@ function ShowJobs() {
         })
 
         
-    }
+    },[])
     React.useEffect(()=>{console.log({filteredArray})},[filteredArray]) 
   // })
 
@@ -70,7 +70,8 @@ function ShowJobs() {
     <div>
         <br/>
                 <div style={{display:'flex', justifyContent:'center', alignItems:'center'}}>
-       <button onClick={handleClick} className="btn btn-outline-success">Show jobs</button>
+      {/* <button onClick={handleClick} className="btn btn-outline-success">Show jobs</button> */}
+      <h2 style={{ color:'rgb(97, 94, 94)'}}>Jobs of {decoded.category}</h2>
         </div>
         <div>
         <Tabs
@@ -83,7 +84,7 @@ function ShowJobs() {
                                         >
             {
               
-                filteredArray.map((value)=>{
+                filteredArray.map((value,ind)=>{
                     return(
                         
                              
@@ -107,12 +108,13 @@ function ShowJobs() {
                                       </Typography>
 
                                     </CardContent>
-                                    <SendRatings value1={value._id}/>
+
+                                    <SendRatings value1={value._id} key={ind}/>
                                     <CardActions disableSpacing>
                               
                                   
                                   
-                                    <RequestJob value2={value._id}/>
+                                    <RequestJob value2={value._id} key={ind}/> 
                                     </CardActions>
                                   
                                   </Card>

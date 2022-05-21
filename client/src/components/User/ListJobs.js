@@ -1,13 +1,9 @@
 import axios from 'axios'
 import React, {useState, useEffect} from 'react'
 import jwt_decode from 'jwt-decode'
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import { CardActionArea, chipClasses } from '@mui/material';
+
 import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
+
 import ActionAreaCard from './ActionAreaCard';
 import Button from '@mui/material/Button'
 
@@ -23,8 +19,9 @@ function ListJobs() {
 
     var loggedIn = decoded.role;
     const userId= decoded._id;
-
-    const handleClick = () => {
+    useEffect(async()=>
+    {
+    // const handleClick = () => {
         axios.get(`http://localhost:5000/api/post/${userId}`)
         .then(resp => {
             // console.log(resp.data) 
@@ -33,7 +30,8 @@ function ListJobs() {
             
         })
        
-    }
+    
+},[])
     React.useEffect(()=>{},[jobs]) 
  
   
@@ -54,9 +52,12 @@ function ListJobs() {
                 <div style={{display:'flex', justifyContent:'center', alignItems:'center'}}>
         {/* <button onClick={handleClick} className="btn btn-outline-success">View your jobs</button> */}
 
-        <Button variant="contained" color="success" onClick={handleClick}>
+        {/* <Button variant="contained" color="success" onClick={handleClick}>
         View your jobs
-</Button>
+        
+</Button> */}
+      <h2 style={{ color:'rgb(97, 94, 94)'}}>Your jobs</h2>
+ 
         </div>
         <div>
         <Tabs
@@ -68,11 +69,12 @@ function ListJobs() {
                                 aria-label="scrollable force tabs example"
                                         >
             {
-                jobs.map((value)=>{
+                jobs.map((value,index)=>{
                     return(
                         
                              
-                                <ActionAreaCard value={value}/>
+                                <ActionAreaCard value={value} key={index}/>
+
                        
                     )
                 })
